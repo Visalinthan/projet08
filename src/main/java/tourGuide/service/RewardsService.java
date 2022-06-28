@@ -19,7 +19,7 @@ public class RewardsService {
 	// proximity in miles
     private int defaultProximityBuffer = 10;
 	private int proximityBuffer = defaultProximityBuffer;
-	private int attractionProximityRange = 200;
+	private int attractionProximityRange = 10000;
 	private final GpsUtil gpsUtil;
 	private final RewardCentral rewardsCentral;
 	
@@ -85,7 +85,7 @@ public class RewardsService {
 	 * @param user
 	 * @return integer
 	 */
-	private int getRewardPoints(Attraction attraction, User user) {
+	public int getRewardPoints(Attraction attraction, User user) {
 		return rewardsCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());
 	}
 
